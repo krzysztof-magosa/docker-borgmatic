@@ -1,0 +1,19 @@
+---
+location:
+  source_directories:
+    - /data
+
+  exclude_if_present: .nobackup
+  exclude_caches: true
+
+  repositories:
+    - /repo
+
+retention:
+  keep_daily: 14
+  keep_weekly: 4
+  keep_monthly: 3
+  prefix: "example-"
+
+storage:
+  archive_name_format: 'example-{now}'

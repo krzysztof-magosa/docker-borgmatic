@@ -1,0 +1,12 @@
+version: '3'
+services:
+  borgmatic:
+    image: krzysztofmagosa/borgmatic:latest
+    container_name: borgmatic
+    volumes:
+      - ${VOLUME_DATA}:/data:ro
+      - ${VOLUME_REPO}:/repo:ro
+      - ${VOLUME_CONF}:/conf:ro
+    environment:
+      - BORG_PASSPHRASE=${BORG_PASSPHRASE}
+      - TZ=${TZ}
