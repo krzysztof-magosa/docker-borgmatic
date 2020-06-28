@@ -12,7 +12,10 @@ password        ${MAIL_PASSWORD}
 EOF
 
 ln -snf /usr/bin/msmtp /usr/sbin/sendmail
-ln -snf /conf/borgmatic /etc/borgmatic
-ln -snf /conf/borgmatic.d /etc/borgmatic.d
+
+[ -d /conf/borgmatic ] && ln -snf /conf/borgmatic /etc/borgmatic
+[ -d /conf/borgmatic.d ] && ln -snf /conf/borgmatic.d /etc/borgmatic.d
+[ -d /conf/ssh ] && ln -snf /conf/ssh /root/.ssh
+
 echo "MAILTO=${MAIL_TO}" | cat - /conf/crontab | crontab -
 exec /usr/sbin/crond -f -d 6
