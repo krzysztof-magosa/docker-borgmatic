@@ -1,2 +1,2 @@
 borgbackup==1.1.13
-borgmatic==1.5.8
+borgmatic==1.5.12
