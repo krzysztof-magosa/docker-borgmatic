@@ -1,0 +1,15 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: borgbackup
+    versions:
+    - 1.1.15
+  - dependency-name: borgmatic
+    versions:
+    - 1.5.12
